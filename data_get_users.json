@@ -1,33 +1,29 @@
 {
-  "swagger" : "2.0",
-  "info" : {
-    "description" : null,
-    "version" : "1.0.0",
-    "title" : null,
-    "termsOfService" : null,
-    "contact" : null,
-    "license" : null
+  "swagger": "2.0",
+  "info": {
+    "description": "User API from JSONPlaceholder for testing REST integration",
+    "version": "1.0.0",
+    "title": "UsersAPI"
   },
-  "host" : "jsonplaceholder.typicode.com",
-  "basePath" : "/",
-  "schemes" : [ "https" ],
-  "paths" : {
-    "/users" : {
-      "get" : {
-        "tags" : [ "data_get_users" ],
-        "summary" : null,
-        "description" : null,
-        "operationId" : "data_get_users",
-        "produces" : [ "application/json" ],
-        "consumes" : [ "application/json" ],
-        "parameters" : [ ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/data_get_users"
+  "host": "jsonplaceholder.typicode.com",
+  "basePath": "/",
+  "schemes": ["https"],
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": ["data_get_users"],
+        "summary": "Get list of users",
+        "description": "Returns a list of users",
+        "operationId": "getUsers",
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
               }
             }
           }
@@ -35,75 +31,55 @@
       }
     }
   },
-  "definitions" : {
-    "data_get_users##address##geo" : {
-      "properties" : {
-        "lat" : {
-          "type" : "string"
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
         },
-        "lng" : {
-          "type" : "string"
-        }
-      }
-    },
-    "data_get_users##address" : {
-      "properties" : {
-        "street" : {
-          "type" : "string"
+        "name": {
+          "type": "string"
         },
-        "suite" : {
-          "type" : "string"
+        "username": {
+          "type": "string"
         },
-        "city" : {
-          "type" : "string"
+        "email": {
+          "type": "string"
         },
-        "zipcode" : {
-          "type" : "string"
+        "address_street": {
+          "type": "string"
         },
-        "geo" : {
-          "$ref" : "#/definitions/data_get_users##address##geo"
-        }
-      }
-    },
-    "data_get_users##company" : {
-      "properties" : {
-        "name" : {
-          "type" : "string"
+        "address_suite": {
+          "type": "string"
         },
-        "catchPhrase" : {
-          "type" : "string"
+        "address_city": {
+          "type": "string"
         },
-        "bs" : {
-          "type" : "string"
-        }
-      }
-    },
-    "data_get_users" : {
-      "properties" : {
-        "id" : {
-          "type" : "number",
-          "format" : "int32"
+        "address_zipcode": {
+          "type": "string"
         },
-        "name" : {
-          "type" : "string"
+        "address_geo_lat": {
+          "type": "string"
         },
-        "username" : {
-          "type" : "string"
+        "address_geo_lng": {
+          "type": "string"
         },
-        "email" : {
-          "type" : "string"
+        "phone": {
+          "type": "string"
         },
-        "address" : {
-          "$ref" : "#/definitions/data_get_users##address"
+        "website": {
+          "type": "string"
         },
-        "phone" : {
-          "type" : "string"
+        "company_name": {
+          "type": "string"
         },
-        "website" : {
-          "type" : "string"
+        "company_catchPhrase": {
+          "type": "string"
         },
-        "company" : {
-          "$ref" : "#/definitions/data_get_users##company"
+        "company_bs": {
+          "type": "string"
         }
       }
     }
