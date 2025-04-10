@@ -1,33 +1,46 @@
 {
-  "swagger" : "2.0",
-  "info" : {
-    "description" : null,
-    "version" : "1.0.0",
-    "title" : null,
-    "termsOfService" : null,
-    "contact" : null,
-    "license" : null
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "API Definition",
+    "termsOfService": "",
+    "contact": {
+      "email": ""
+    },
+    "license": {
+      "name": "",
+      "url": ""
+    }
   },
-  "host" : "jsonplaceholder.typicode.com",
-  "basePath" : "/",
-  "schemes" : [ "https" ],
-  "paths" : {
-    "/posts" : {
-      "get" : {
-        "tags" : [ "app_get_posts" ],
-        "summary" : null,
-        "description" : null,
-        "operationId" : "app_get_posts",
-        "produces" : [ "application/json" ],
-        "consumes" : [ "application/json" ],
-        "parameters" : [ ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/app_get_posts"
+  "host": "jsonplaceholder.typicode.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/posts": {
+      "get": {
+        "tags": [
+          "app_get_posts"
+        ],
+        "summary": "Retrieve all posts",
+        "description": "Fetches a list of posts from the JSONPlaceholder API",
+        "operationId": "app_get_posts",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/app_get_posts"
               }
             }
           }
@@ -35,22 +48,23 @@
       }
     }
   },
-  "definitions" : {
-    "app_get_posts" : {
-      "properties" : {
-        "userId" : {
-          "type" : "number",
-          "format" : "int32"
+  "definitions": {
+    "app_get_posts": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "number",
+          "format": "int32"
         },
-        "id" : {
-          "type" : "number",
-          "format" : "int32"
+        "id": {
+          "type": "number",
+          "format": "int32"
         },
-        "title" : {
-          "type" : "string"
+        "title": {
+          "type": "string"
         },
-        "body" : {
-          "type" : "string"
+        "body": {
+          "type": "string"
         }
       }
     }
