@@ -1,0 +1,40 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Webhook Test API",
+    "version": "1.0.0"
+  },
+  "host": "webhook.site",
+  "basePath": "/",
+  "schemes": ["https"],
+  "paths": {
+    "/104607a1-be53-4cf7-84ba-b4298d8abbf0": {
+      "post": {
+        "summary": "Send test data",
+        "description": "Posts test JSON to webhook.site",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "integer" },
+                "name": { "type": "string" },
+                "email": { "type": "string" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
