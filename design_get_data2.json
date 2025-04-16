@@ -25,10 +25,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/design_get_data2"
-              }
+              "$ref" : "#/definitions/design_get_data2"
             }
           }
         }
@@ -36,21 +33,61 @@
     }
   },
   "definitions" : {
+    "design_get_data2##data" : {
+      "properties" : {
+        "id" : {
+          "type" : "number"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "first_name" : {
+          "type" : "string"
+        },
+        "last_name" : {
+          "type" : "string"
+        },
+        "avatar" : {
+          "type" : "string"
+        }
+      }
+    },
+    "design_get_data2##support" : {
+      "properties" : {
+        "url" : {
+          "type" : "string"
+        },
+        "text" : {
+          "type" : "string"
+        }
+      }
+    },
     "design_get_data2" : {
       "properties" : {
-        "userId" : {
+        "page" : {
           "type" : "number",
           "format" : "int32"
         },
-        "id" : {
+        "per_page" : {
           "type" : "number",
           "format" : "int32"
         },
-        "title" : {
-          "type" : "string"
+        "total" : {
+          "type" : "number",
+          "format" : "int32"
         },
-        "body" : {
-          "type" : "string"
+        "total_pages" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/design_get_data2##data"
+          }
+        },
+        "support" : {
+          "$ref" : "#/definitions/design_get_data2##support"
         }
       }
     }
