@@ -1,0 +1,102 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "reqres.in",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/users" : {
+      "get" : {
+        "tags" : [ "design_get_data" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "design_get_data",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "number",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/design_get_data"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "design_get_data##data" : {
+      "properties" : {
+        "id" : {
+          "type" : "number"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "first_name" : {
+          "type" : "string"
+        },
+        "last_name" : {
+          "type" : "string"
+        },
+        "avatar" : {
+          "type" : "string"
+        }
+      }
+    },
+    "design_get_data##support" : {
+      "properties" : {
+        "url" : {
+          "type" : "string"
+        },
+        "text" : {
+          "type" : "string"
+        }
+      }
+    },
+    "design_get_data" : {
+      "properties" : {
+        "page" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "per_page" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "total" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "total_pages" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/design_get_data##data"
+          }
+        },
+        "support" : {
+          "$ref" : "#/definitions/design_get_data##support"
+        }
+      }
+    }
+  }
+}
