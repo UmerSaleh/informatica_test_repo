@@ -1,12 +1,12 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : null,
+    "description" : "test",
     "version" : "1.0.0",
-    "title" : null,
-    "termsOfService" : null,
-    "contact" : null,
-    "license" : null
+    "title" : "test",
+    "termsOfService" : "",
+    "contact" : "",
+    "license" : "Success"
   },
   "host" : "reqres.in",
   "basePath" : "/api",
@@ -15,12 +15,21 @@
     "/users" : {
       "get" : {
         "tags" : [ "design_get_data2" ],
-        "summary" : null,
-        "description" : null,
+        "summary" : "test",
+        "description" : "Test",
         "operationId" : "design_get_data2",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
-        "parameters" : [ ],
+        "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Page number",
+              "required": false,
+              "type": "number",
+              "format": "int32"
+            }
+          ]
         "responses" : {
           "200" : {
             "description" : "successful operation",
