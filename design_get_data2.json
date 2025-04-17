@@ -29,7 +29,7 @@
               "type": "number",
               "format": "int32"
             }
-          ]
+          ],
         "responses" : {
           "200" : {
             "description" : "successful operation",
