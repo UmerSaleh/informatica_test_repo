@@ -21,17 +21,12 @@
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "name",
+          "name" : "postId",
           "in" : "query",
           "description" : null,
           "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "description",
-          "in" : "query",
-          "description" : null,
-          "required" : false,
-          "type" : "string"
+          "type" : "number",
+          "format" : "int32"
         } ],
         "responses" : {
           "200" : {
