@@ -1,0 +1,61 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "jsonplaceholder.typicode.com",
+  "basePath" : "/posts",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/{id}" : {
+      "get" : {
+        "tags" : [ "lunatrix_get_posts" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "lunatrix_get_posts",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/lunatrix_get_posts"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "lunatrix_get_posts" : {
+      "properties" : {
+        "userId" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "body" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
